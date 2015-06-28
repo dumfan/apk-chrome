@@ -1,0 +1,26 @@
+{
+  "name": "Systembolaget APK",
+  "short_name": "bolaget-apk",
+  "version": "1.0.1",
+  "manifest_version": 2,
+  "description": "Show APK on Systembolaget's web site",
+  "icons": {
+    "128": "images/apk.png"
+  },
+  "default_locale": "en",
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.systembolaget.se/*"
+      ],
+      "js": [
+        "scripts/contentscript.js"
+      ],
+      "run_at": "document_end",
+      "all_frames": false
+    }
+  ],
+  "permissions": [
+    "*://*.systembolaget.se/*"
+  ]
+}
