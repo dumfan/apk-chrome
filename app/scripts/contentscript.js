@@ -33,8 +33,6 @@
     var alcohol = parseFloat(formatAlcohol(detailsList.querySelector('li:nth-child(2) p').innerHTML));
     var volume = parseFloat(formatVolume(productHeader.querySelector('.packaging').innerHTML));
 
-    console.log(price, alcohol, volume);
-
     var apkListItem = document.createElement('li');
     apkListItem.innerHTML = '<h3>APK</h3><p>' + getApk(price, alcohol, volume) + '</p>';
 
