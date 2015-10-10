@@ -30,10 +30,9 @@
 
   var updateApkOnProductPage = function () {
     var price = parseFloat(formatPrice(productHeader.querySelector('.price').innerHTML));
-    var alcohol = parseFloat(formatAlcohol(detailsList.querySelector('li:nth-child(2) p').innerHTML));
+    var alcohol = formatAlcohol(/[0-9.,]+[0-9]\s%/.exec(detailsList.innerHTML)[0]);
     var volume = parseFloat(formatVolume(productHeader.querySelector('.packaging').innerHTML));
 
-    console.log(price, alcohol, volume);
 
     var apkListItem = document.createElement('li');
     apkListItem.innerHTML = '<h3>APK</h3><p>' + getApk(price, alcohol, volume) + '</p>';
